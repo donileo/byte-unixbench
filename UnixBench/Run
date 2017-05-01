@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/local/bin/perl -w
 
 use strict;
 
@@ -844,11 +844,11 @@ sub preChecks {
     $ENV{'LANG'} = $language;
 
     # Check that the required files are in the proper places.
-    system("make check");
+    system("gmake check");
     if ($? != 0) {
-        system("make all");
+        system("gmake all");
         if ($? != 0) {
-            abortRun("\"make all\" failed");
+            abortRun("\"gmake all\" failed");
         }
     }
 
